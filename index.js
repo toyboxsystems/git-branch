@@ -1,9 +1,9 @@
 'use strict';
 
 const fs = require('fs');
-const util = require('util');
+const promisify = require('util.promisify');
 const find = require('findup-sync');
-const readFile = util.promisify(fs.readFile);
+const readFile = promisify(fs.readFile);
 
 function branch(cwd, callback) {
   if (typeof cwd === 'function') {
